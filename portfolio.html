@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best in Show Puppies</title>
+    
+    <!-- Font Awesome and Bootstrap Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            text-align: center;
+            padding: 0;
+            height: 150px;
+            background-color: #ffffff;
+            width: 100%;
+        }
+
+        .logo {
+            height: 150px;
+            max-width: 420px;
+            width: auto;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            color: #d1b094;
+        }
+
+        .hero {
+            background-image: url('images/beige-damask-2491649_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 32px;
+            margin: 20px 0 10px;
+            text-align: left;
+        }
+
+        .underline {
+            border-bottom: 2px solid #4E3B31;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .project-description {
+            text-align: left;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .project-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .project-preview img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .link-box {
+            display: block;
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+
+        .link-box:hover {
+            background-color: #555;
+        }
+
+        footer {
+            width: 100%;
+            color: white;
+        }
+
+        /* Top Footer Section */
+        .footer-top {
+            background-color: #4E3B31;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-top div {
+            margin: 10px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .footer-top a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .footer-top a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-top .social-links a {
+            margin: 0 10px;
+            font-size: 24px;
+        }
+
+        /* Bottom Footer Section */
+        .footer-bottom {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="logo" class="logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h2>Portfolio</h2>
+    </div>
+
+    <main>
+        <h2 class="project-title">My Web Designs</h2>
+        <div class="underline"></div>
+        <p class="project-description">
+            These are web designs that I designed in HTML and CSS using FontAwesome. 
+            Click on the links below the website images to take a look!
+        </p>
+        <div class="project-preview">
+            <div>
+                <img src="images/puppywebsite.png" alt="Best in Show Puppies Project">
+                <a href="columns.html" class="link-box">View Best in Show Puppies</a>
+            </div>
+            <div>
+                <img src="images/grooves.png" alt="Grooves Guitars Project">
+                <a href="index2.html" class="link-box">View Grooves Guitars</a>
+            </div>
+            <div>
+                <img src="images/animalswebsite.png" alt="Animals Project">
+                <a href="animals.html" class="link-box">View Animals</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Double Footer -->
+<footer>
+    <div class="top-footer" style="background-color: #4E3B31; color: white; padding: 20px 0;">
+        <div class="container">
+            <div class="row">
+                <!-- Portfolio Description Section -->
+                <div class="col-md-6">
+                    <h3 style="font-size: 18px;">Portfolio Website for Web Development</h3>
+                    <p style="font-size: 14px;">This is a portfolio for CSCI1450 - Web Development. All images used in this portfolio are royalty-free images sourced from Pixabay.com.</p>
+                </div>
+
+                <!-- Let's Connect Section -->
+                <div class="col-md-6 text-center">
+                    <h3 style="font-size: 18px;">Let's Connect!</h3>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>
+                            <a href="https://www.linkedin.com/in/sumaya-osman-17180b269" target="_blank" style="color: white; font-size: 16px;">
+                                <i class="fa fa-linkedin"></i> LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sumayao" target="_blank" style="color: white; font-size: 16px;">
+                                <i class="fa fa-github"></i> GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:sumaya.osman15@gmail.com" style="color: white; font-size: 16px;">
+                                <i class="fa fa-envelope"></i> Email
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Footer with Copyright -->
+    <div class="bottom-footer" style="background-color: #222; color: white; text-align: center; padding: 10px 0;">
+        <p style="font-size: 12px;">&copy; 2024 Sumaya Osman</p>
+    </div>
+</footer>
+
+    <!-- JavaScript for Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

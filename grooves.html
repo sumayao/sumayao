@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groove Guitars</title>
+    <meta name="description" content="Groove Guitars carries the grooviest guitars on the planet! Stop by our store to find your groove.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            color: #333;
+            background: linear-gradient(to bottom, #e5f8ff, #ffe6f7);
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #000;
+        }
+
+        header img {
+            max-width: 80%;
+            height: auto;
+            padding: 10px;
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            background-color: #488017;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #FFFE05;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 8px 15px;
+        }
+
+        nav ul li a:hover {
+            color: #F8AE3B;
+        }
+
+        /* Main Title */
+        h1 {
+            font-size: 48px;
+            color: #488017;
+            text-align: center;
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 20px 0;
+            text-shadow: 1px 1px 3px #FF00FE;
+        }
+
+        /* Intro Text */
+        .intro-text {
+            text-align: center;
+            font-size: 22px;
+            color: #93278E;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+            background: #FFFE05;
+            border: 2px solid #488017;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        /* Video Container */
+        .video-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            border: 2px solid #93278E;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden; /* Prevent overflow from the iframe */
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 315px; /* Set a default height */
+            border-radius: 8px 8px 0 0;
+        }
+
+        /* Responsive video */
+        .video-container iframe {
+            position: relative;
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Video Titles */
+        .video-container .full-header {
+            background: linear-gradient(to right, #93278E, #FFFE05);
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 0 0 8px 8px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #488017;
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #FFFE05;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #F8AE3B;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="images 3/groove-guitars-logo.png" alt="Groove Guitars logo with a guitar and groovy flower print" class="logo">
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index2.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="grooves.html">Grooves</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Title -->
+        <h1>Grooves at Guitars Grooves</h1>
+
+        <!-- Intro Text -->
+        <p class="intro-text">Find your groove at Groove Guitars! Here are some of our favorite guitar grooves.</p>
+
+        <!-- YouTube Embed #1 -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/tUGMAZWCDFc" frameborder="0" allowfullscreen></iframe>
+            <div class="full-header">Clouded - Brent Faiyaz (Cover by DOUGY)</div>
+        </div>
+
+        <!-- YouTube Embed #2 -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/fNxjNCeBOZc" frameborder="0" allowfullscreen></iframe>
+            <div class="full-header">Like I Want You Guitar - Giveon (Cover by Definitely Dean)</div>
+        </div>
+
+        <!-- SoundCloud Embed -->
+        <div class="video-container">
+            <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1892878188&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" frameborder="0" allow="autoplay"></iframe>
+            <div class="full-header">Favorite Crime - Olivia Rodrigo (Cover by KeysoftheStreets)</div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>
+            <a href="mailto:example@example.com">Email Us</a> • 
+            <a href="tel:1234567890">Call Us</a> • 
+            <a href="sms:1234567890">Text Us</a>
+        </p>
+        <small>&copy; 2024 Groove Guitars. All rights reserved.</small>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

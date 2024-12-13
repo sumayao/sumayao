@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Photography</title>
+    <meta name="description" content="This website features animal photography and tips for capturing stunning images of animals in their natural habitat.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Merriweather', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d9c4a1; 
+            color: #4c4c4c; 
+            text-align: center;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2a6b3b; 
+            color: #f0f0f0; 
+            padding: 20px;
+            border-bottom: 4px solid #1b4c29; 
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* Navigation Styling */
+        nav {
+            background-color: #3a7f58; /* Earthy green navbar */
+            padding: 15px 0;
+            border-bottom: 2px solid #2b5e3c; /* Deep green border */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #7db77d; 
+            color: #2a6b3b; 
+        }
+
+        /* Hero Section Styling */
+        .hero-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Main Section */
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #e9e9e9; 
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        main h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #2a6b3b; 
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        main p {
+            text-align: justify;
+            color: #3c3c3c; 
+        }
+
+        /* Gallery Styling */
+        .gallery {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .gallery .preview img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-thumbnails {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .gallery-thumbnails img {
+            width: 100px;
+            height: 75px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-thumbnails img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Footer Styling */
+        .footer-upper {
+            border-top: 2px solid #2b5e3c;
+            border-bottom: 2px solid #2b5e3c;
+            padding: 20px 0;
+            background-color: #3a7f58; 
+        }
+
+        .footer-upper h5 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #f0f0f0; 
+        }
+
+        .footer-upper ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .footer-upper ul li {
+            margin-bottom: 8px;
+            color: #d6d6d6;
+        }
+
+        .footer-upper ul li i {
+            margin-right: 8px;
+            color: #7db77d; 
+        }
+
+        .footer-lower {
+            background-color: #2a6b3b; 
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-lower a {
+            color: #ffd700; 
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-lower a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Animal Photography</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="hero-container">
+                    <img class="hero-image img-fluid" src="images/rabbit-1903016.jpg" alt="Rabbit">
+                </div>
+            </div>
+        </div>
+
+        <!-- Text Section with Camera Icon in col-sm-2 -->
+<div class="row">
+    <div class="col-sm-2">
+        <i class="fas fa-camera" style="color: #6f4f28; font-size: 4rem;"></i>
+    </div>
+    <div class="col-sm-10">
+        <p>
+            The website features photographs of animals from Pixabay.com. The key to animal photography is patience. 
+            It can take a long time to get the right lighting and the best view of the animal. When photographing animals, 
+            you do not have a lot of control...you need to wait for them.
+        </p>
+    </div>
+</div>
+
+
+
+        <!-- Photo Gallery -->
+        <div class="row">
+            <div class="col-sm-12 gallery">
+                <div class="preview">
+                    <img id="preview" src="images/hedgehog-1215140.jpg" alt="Hedgehog">
+                </div>
+                <div class="gallery-thumbnails">
+                    <img onclick="document.getElementById('preview').src='images/hedgehog-1215140.jpg'" src="images/hedgehog-1215140.jpg" alt="Hedgehog">
+                    <img onclick="document.getElementById('preview').src='images/fox-715588.jpg'" src="images/fox-715588.jpg" alt="Fox">
+                    <img onclick="document.getElementById('preview').src='images/bison-526805.jpg'" src="images/bison-526805.jpg" alt="Bison">
+                    <img onclick="document.getElementById('preview').src='images/otter-1438381.jpg'" src="images/otter-1438381.jpg" alt="Otter">
+                    <img onclick="document.getElementById('preview').src='images/fallow-deer-984573.jpg'" src="images/fallow-deer-984573.jpg" alt="Fallow Deer">
+                    <img onclick="document.getElementById('preview').src='images/lizard-4763351.jpg'" src="images/lizard-4763351.jpg" alt="Lizard">
+                    <img onclick="document.getElementById('preview').src='images/spider-1555216.jpg'" src="images/spider-1555216.jpg" alt="Spider">
+                    <img onclick="document.getElementById('preview').src='images/sea-2361247.jpg'" src="images/sea-2361247.jpg" alt="Sea">
+                    <img onclick="document.getElementById('preview').src='images/sheep-4575809.jpg'" src="images/sheep-4575809.jpg" alt="Sheep">
+                    <img onclick="document.getElementById('preview').src='images/animal-4855514.jpg'" src="images/animal-4855514.jpg" alt="Animal">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+<div class="footer-upper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h5 style="color: #f0f0f0;">Web Design Exercise</h5>
+                <ul style="color: #f0f0f0;">
+                    <li>Animal Photography is a website exercise on image galleries available on WebDevStudents.com. The images are royalty-free photos from pixabay.com. JavaScript was used to make the photo gallery, and Bootstrap columns for responsive layout.</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <h5 style="color: #fff;">Connect with Animal Photography!</h5>
+                <ul>
+                    <li><i class="fab fa-facebook" style="color: #fff;"></i><a href="https://facebook.com" target="_blank" style="color: #fff;">Facebook</a></li>
+                    <li><i class="fab fa-instagram" style="color: #fff;"></i><a href="https://instagram.com" target="_blank" style="color: #fff;">Instagram</a></li>
+                    <li><i class="fab fa-envelope" style="color: #fff;"></i><a href="mailto:contact@photography.com" style="color: #fff;">Email</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer-lower">
+    <p style="color: #fff;">&copy; 2024 Sumaya Osman. All Rights Reserved.</p>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

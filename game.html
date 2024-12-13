@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta charset="UTF-8">
+   <title>Game with High Score Tracking</title>
+
+   <!-- Link to Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+   <!-- CSS for the canvas, game controls, and background -->
+   <style>
+      /* Brown-beige background for the webpage */
+      body {
+         background-color: #D2B48C;
+         color: #FFFFFF;
+         font-family: 'Roboto', sans-serif;
+         margin: 0;
+         padding: 0;
+      }
+
+      /* Header styling */
+      header {
+         background-color: #FFFFFF;
+         color: #4E3B31;
+         text-align: center;
+         padding: 20px;
+         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Navigation styling */
+      nav {
+         background-color: #333;
+         padding: 10px 0;
+         text-align: center;
+      }
+
+      nav ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+         display: flex;
+         justify-content: center;
+         gap: 20px;
+      }
+
+      nav ul li {
+         display: inline;
+      }
+
+      nav ul li a {
+         text-decoration: none;
+         color: #FFFFFF;
+         font-size: 18px;
+      }
+
+      nav ul li a:hover {
+         text-decoration: underline;
+         color: #d1b094;
+      }
+
+      /* Game description */
+      .game-description {
+         text-align: center;
+         margin: 20px auto;
+         color: #4E3B31;
+         font-size: 16px;
+         max-width: 600px;
+      }
+
+      /* Canvas styles */
+      canvas {
+         border: 1px solid #d3d3d3;
+         background-image: url('images/videogamebackground.png');
+         background-size: 200% 200%;
+         background-repeat: no-repeat;
+         background-position: left bottom;
+         width: 640px;
+         height: 360px;
+         background-color: #4CAF50;
+         display: block;
+         margin: 0 auto;
+      }
+
+      /* Game container */
+      #game {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-top: 20px;
+      }
+
+      /* Button styles */
+      .game-controls {
+         margin-top: 10px;
+         text-align: center;
+      }
+
+      .myButton {
+         padding: 12px 24px;
+         font-size: 18px;
+         cursor: pointer;
+         background-color: #8B4513;
+         color: white;
+         border: 2px solid #6B3E26;
+         border-radius: 8px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+         transition: background-color 0.3s, box-shadow 0.3s;
+         margin: 5px;
+      }
+
+      .myButton:hover {
+         background-color: #556B2F;
+         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .myButton:active {
+         background-color: #6B8E23;
+         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer styling */
+      footer {
+         background-color: #4E3B31;
+         color: #FFFFFF;
+         text-align: center;
+         padding: 10px 0;
+         margin-top: 20px;
+      }
+
+      footer p {
+         margin: 0;
+         font-size: 14px;
+      }
+/* JavaScript Game changes for mobile */
+.mobile {
+    display: none;
+}
+@media only screen and (max-width: 768px) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+        touch-action: manipulation;
+    }
+}
+
+   </style>
+</head>
+
+<body onload="startGame()">
+   <!-- Header with logo -->
+   <header>
+   <img src="images/logo.png" alt="Logo" style="max-width: 300px; height: auto;">
+</header>
+
+
+   <!-- Navigation -->
+   <nav>
+      <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="resume.html">Resume</a></li>
+         <li><a href="game.html">Game</a></li>
+         <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+   </nav>
+
+   <!-- Game description -->
+   <div class="game-description">
+      <p>
+         Welcome to my JavaScript Flappy Bird Game! 
+         It includes a high-score tracking system, gravity physics for the bird, and a restart feature. Try it out and beat the high score!
+      </p>
+   </div>
+
+   <!-- Main game container -->
+   <main>
+      <!-- Game canvas area -->
+      <div id="game"></div>
+      
+      <!-- Game controls for flying and restart -->
+      <!-- Desktop controls -->
+<div class="game-controls desktop">
+    <button class="myButton" onmousedown="fly(-0.2)" onmouseup="fly(0.05)">FLY</button>
+    <button class="myButton" onclick="restartGame()">RESTART</button>
+</div>
+
+<!-- Mobile controls -->
+<div class="game-controls mobile">
+    <button class="myButton" ontouchstart="fly(-0.2)" ontouchend="fly(0.05)">FLY</button>
+    <button class="myButton" onclick="restartGame()">RESTART</button>
+</div>
+   </main>
+
+  <!-- Double Footer -->
+<footer>
+    <div class="top-footer" style="background-color: #4E3B31; color: white; padding: 20px 0;">
+        <div class="container">
+            <div class="row">
+                <!-- Portfolio Description Section -->
+                <div class="col-md-6">
+                    <h3 style="font-size: 18px;">Portfolio Website for Web Development</h3>
+                    <p style="font-size: 14px;">This is a portfolio for CSCI1450 - Web Development. All images used in this portfolio are royalty-free images sourced from Pixabay.com.</p>
+                </div>
+
+                <!-- Let's Connect Section -->
+                <div class="col-md-6 text-center">
+                    <h3 style="font-size: 18px;">Let's Connect!</h3>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>
+                            <a href="https://www.linkedin.com/in/sumaya-osman-17180b269" target="_blank" style="color: white; font-size: 16px;">
+                                <i class="fa fa-linkedin"></i> LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sumayao" target="_blank" style="color: white; font-size: 16px;">
+                                <i class="fa fa-github"></i> GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:sumaya.osman15@gmail.com" style="color: white; font-size: 16px;">
+                                <i class="fa fa-envelope"></i> Email
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Footer with Copyright -->
+    <div class="bottom-footer" style="background-color: #222; color: white; text-align: center; padding: 10px 0;">
+        <p style="font-size: 12px;">&copy; 2024 Sumaya Osman</p>
+    </div>
+</footer>
+
+   <!-- JavaScript for the game -->
+   <script>
+      var myGamePiece;
+      var myObstacles = [];
+      var myScore;
+      var myHighScore;
+      var highScore = 0;
+
+      function startGame() {
+          myGamePiece = new component(30, 30, "images/bird.png", 10, 120, "image"); // Set custom image (bird.png)
+          myGamePiece.gravity = 0.05; // Default gravity value
+          myScore = new component("30px", "Consolas", "#FFFFFF", 420, 40, "text");
+          myHighScore = new component("20px", "Consolas", "#FFD700", 420, 80, "text"); // Smaller high score font
+          myGameArea.start();
+      }
+
+      function startGame() {
+    // Adjust the size of the game piece based on screen width
+    var gamePieceWidth = window.innerWidth < 768 ? 20 : 30; // 20px for mobile, 30px for desktop
+    var gamePieceHeight = window.innerWidth < 768 ? 20 : 30; // 20px for mobile, 30px for desktop
+
+    myGamePiece = new component(gamePieceWidth, gamePieceHeight, "images/bird.png", 10, 120, "image");
+    myGamePiece.gravity = 0.05; // Default gravity value
+    myScore = new component("30px", "Consolas", "#FFFFFF", 420, 40, "text");
+    myHighScore = new component("20px", "Consolas", "#FFD700", 420, 80, "text"); // Smaller high score font
+    myGameArea.start();
+}
+
+
+      var myGameArea = {
+          canvas: document.createElement("canvas"),
+          start: function() {
+              this.canvas.width = canvasWidth;
+              this.canvas.height = canvasHeight;
+              this.context = this.canvas.getContext("2d");
+              var myGame = document.getElementById("game");
+              myGame.insertBefore(this.canvas, myGame.childNodes[0]);        
+              this.frameNo = 0;
+              this.interval = setInterval(updateGameArea, 20); // Increase update speed
+           },
+          clear: function() {
+              this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+          },
+          stop: function() {
+              clearInterval(this.interval);
+          }
+      };
+
+      function component(width, height, color, x, y, type) {
+          this.type = type;
+          if (type == "image") {
+            this.image = new Image();
+            this.image.src = color;
+          }
+          this.score = 0;
+          this.width = width;
+          this.height = height;
+          this.speedX = 0;
+          this.speedY = 0;    
+          this.x = x;
+          this.y = y;
+          this.gravity = 0;
+          this.gravitySpeed = 0;
+          this.update = function() {
+              ctx = myGameArea.context;             
+              if (type == "image") {
+                  ctx.drawImage(this.image,this.x,this.y,this.width, this.height); // Draw the image
+              } else if (this.type == "text") {
+                  ctx.font = this.width + " " + this.height;
+                  ctx.fillStyle = color;
+                  ctx.fillText(this.text, this.x, this.y);
+              } else {
+                  ctx.fillStyle = color;
+                  ctx.fillRect(this.x, this.y, this.width, this.height);
+              }
+          }
+          this.newPos = function() {
+              this.gravitySpeed += this.gravity;
+              this.x += this.speedX;
+              this.y += this.speedY + this.gravitySpeed;
+              this.hitBottom();
+          }
+          this.hitBottom = function() {
+              var rockbottom = myGameArea.canvas.height - this.height;
+              if (this.y > rockbottom) {
+                  this.y = rockbottom;
+                  this.gravitySpeed = 0;
+              }
+           }
+          this.crashWith = function(otherobj) {
+              var myleft = this.x;
+              var myright = this.x + (this.width);
+              var mytop = this.y;
+              var mybottom = this.y + (this.height);
+              var otherleft = otherobj.x;
+              var otherright = otherobj.x + (otherobj.width);
+              var othertop = otherobj.y;
+              var otherbottom = otherobj.y + (otherobj.height);
+              var crash = true;
+              if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+                  crash = false;
+              }
+              return crash;
+          }
+      }
+
+      function updateGameArea() {
+          var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+          for (i = 0; i < myObstacles.length; i += 1) {
+              if (myGamePiece.crashWith(myObstacles[i])) {
+                  if (myGameArea.frameNo > highScore) {
+                      highScore = myGameArea.frameNo; // Update high score
+                  }
+                  myGameArea.stop(); 
+                  return;
+              } 
+          }
+          myGameArea.clear();
+          myGameArea.frameNo += 1;
+          if (myGameArea.frameNo == 1 || everyinterval(150)) {
+              x = myGameArea.canvas.width;
+              minHeight = 20;
+              maxHeight = 200;
+              height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
+              minGap = 50;
+              maxGap = 200;
+              gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
+              myObstacles.push(new component(20, height, "#8B4513", x, 0));
+              myObstacles.push(new component(20, x - height - gap, "#8B4513", x, height + gap));
+          }
+          for (i = 0; i < myObstacles.length; i += 1) {
+              myObstacles[i].x += -2; // Increased obstacle speed
+              myObstacles[i].update();
+          }
+          myScore.text="SCORE: " + myGameArea.frameNo;
+          myScore.update();
+          myHighScore.text="HIGH SCORE: " + highScore; // Display high score
+          myHighScore.update();
+          myGamePiece.newPos();
+          myGamePiece.update();
+      }
+
+      function everyinterval(n) {
+          if ((myGameArea.frameNo / n) % 1 === 0) { return true; }
+          return false;
+      }
+
+      function fly(n) {
+          myGamePiece.gravity = n; // Change the bird's gravity speed for flying
+      }
+
+      function restartGame() {
+          myGameArea.stop();
+          myObstacles = [];
+          myGameArea.clear();
+          startGame();
+      }
+      var canvasWidth = 640;
+var canvasHeight = 360;
+
+// Screen width for mobile devices
+if (window.innerWidth < 768) {
+    canvasWidth = 300;
+    canvasHeight = 300;
+}
+   </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

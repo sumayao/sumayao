@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+}
+
+.logo {
+    max-width: 275px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+nav {
+    background: linear-gradient(to right, #4caf50, #ffeb3b);
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero {
+    position: relative;
+    height: 400px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.groove-overlay {
+    position: relative;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+    color: #FF00FE;
+    text-shadow: 2px 2px 2px black;
+    z-index: 2;
+}
+
+main {
+    max-width: 1200px; /* Set the maximum width of the main content */
+    margin: 0 auto; /* Center the main content */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.welcome {
+    margin-bottom: 20px;
+}
+
+.welcome h2 {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.welcome-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-content p {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.groovy-player-img {
+    max-width: 300px;
+    height: auto;
+}
+
+.hours {
+    margin-bottom: 20px;
+}
+
+.hours h2 {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.hours table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hours th,
+.hours td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.hours th {
+    background-color: #f4f4f4;
+}
+
+.contact {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: white;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.contact h2 {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+.contact p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.contact label {
+    float: left;
+    width: 8em;
+    padding-right: 1em;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact input[type="tel"],
+.contact textarea {
+    margin-bottom: 1em;
+    display: block;
+    width: calc(100% - 10em);
+}
+
+.contact textarea {
+    height: 100px;
+}
+
+input[type=submit] {
+    display: block;
+    margin: 20px auto;
+    background-color: yellow;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #4caf50, #ffeb3b);
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

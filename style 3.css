@@ -1,0 +1,122 @@
+/* General styling */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Website Links except the nav */
+a:link {
+    color: #4CAF50;
+}
+a:visited {
+    color: #4CAF50;
+}
+a:hover {
+    color: blue;
+}
+a:active {
+    color: black;
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+    border-bottom: 2px solid #000;
+}
+
+header h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #4CAF50;
+    padding: 5px;
+    border-bottom: 2px solid #000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 8px 0;
+    padding: 0;
+    display: inline-block;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+}
+
+/* Link state colors for contrast */
+nav ul li a:link {
+    color: white;
+}
+nav ul li a:visited {
+    color: white;
+}
+nav ul li a:hover {
+    background-color: #2E7D32;
+    color: #FFFF00;
+}
+nav ul li a:active {
+    background-color: #1B5E20;
+    color: #FFFFFF;
+}
+
+/* Main section styling with max-width */
+main {
+    max-width: 1200px; /* Updated to 1200px */
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    text-align: left;
+}
+
+main h2 {
+    font-size: 3rem;
+    color: black;
+    text-align: left;
+    margin-left: 0;
+}
+
+main p {
+    max-width: 800px;
+    margin: 0;
+    margin-left: 0;
+    text-align: justify;
+}
+
+footer {
+    background-color: white;
+    padding: 20px;
+    border-top: 2px solid #000;
+    color: #333;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+footer small {
+    display: block;
+    margin-top: 10px;
+    color: black;
+}
